@@ -8,7 +8,12 @@ module.exports = function(string) {
 	for (var i = 0; i < entries.length; i++) {
 		var entry = entries[i].split("=")
 		var key = decodeURIComponent(entry[0])
-		var value = entry.length === 2 ? decodeURIComponent(entry[1]) : ""
+		var value = "";
+		try{
+			value = entry.length === 2 ? decodeURIComponent(entry[1]) : "" 
+		}catch(err){
+			value = entry.length === 2 ? entry[1] : ""
+		}
 
 		if (value === "true") value = true
 		else if (value === "false") value = false
