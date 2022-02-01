@@ -9,9 +9,9 @@ module.exports = function(string) {
 		var entry = entries[i].split("=")
 		var key = decodeURIComponent(entry[0])
 		var value = "";
-		try{
+		try {
 			value = entry.length === 2 ? decodeURIComponent(entry[1]) : "" 
-		}catch(err){
+		} catch(err) {
 			value = entry.length === 2 ? entry[1] : ""
 		}
 
